@@ -1,0 +1,57 @@
+{
+  "name": "maximum-join",
+  "version": "0.0.1",
+  "description": "maximum-join",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sugarshin/maximum-join.git"
+  },
+  "main": "index.js",
+  "files": [
+    "lib",
+    "index.js",
+    "test",
+    "package.json",
+    "README.md"
+  ],
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "rules": {
+      "strict": 0,
+      "quotes": [
+        1,
+        "single",
+        "avoid-escape"
+      ],
+      "no-underscore-dangle": 0,
+      "no-unused-vars": [
+        1
+      ]
+    },
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  },
+  "scripts": {
+    "lint": "eslint src/maximum-join.js",
+    "test": "mocha --compilers js:espower-babel/guess test/**/*.js",
+    "compile": "babel src/maximum-join.js -o lib/maximum-join.js",
+    "build": "npm run lint && npm run compile"
+  },
+  "engines": {
+    "node": "0.12.x"
+  },
+  "author": "sugarshin",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^5.4.7",
+    "babel-eslint": "^3.1.9",
+    "babelify": "^6.1.2",
+    "browserify": "^10.2.1",
+    "eslint": "^0.21.2",
+    "espower-babel": "^3.1.1",
+    "mocha": "^2.2.5",
+    "power-assert": "^0.11.0"
+  }
+}
