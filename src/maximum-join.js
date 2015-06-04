@@ -11,8 +11,7 @@ export default function maximumJoin(array) {
     throw new Error('Argument should be an Array.');
   }
 
-  let result = array.slice()
-                    .map(el => {
+  let result = array.map(el => {
                       if (typeof el !== 'number') {
                         return false;
                       }
