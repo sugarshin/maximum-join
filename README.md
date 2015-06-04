@@ -26,16 +26,19 @@ console.log(arr); // => [4, 25, 92, 0, 1, 89, 7]
 
 
 var arr = [1, 0, -1, 1, 9, -7];
-var result = maximumJoin(arr); // => 971110
+maximumJoin(arr); // => 971110
 
 var arr = [];
-var result = maximumJoin(arr); // => 0
+maximumJoin(arr); // => 0
 
 var arr = 'not an array';
-var result = maximumJoin(arr); // => throw error
+maximumJoin(arr); // => throw error
 
 var arr = [4, 62, {}, 542, 66, '2', 8, 9, true, 0, [], 246, false, 9, 7];
-var result = maximumJoin(arr); // => 9987666240
+maximumJoin(arr); // => 9987666240
+
+var arr = [1.42, 642.2214, 9.0, 24.4, 0.3];
+maximumJoin(arr); // => 96422410
 ```
 
 ## Contributing
