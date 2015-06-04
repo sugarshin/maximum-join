@@ -1,7 +1,7 @@
 {
   "name": "maximum-join",
   "version": "0.0.2",
-  "description": "maximum-join",
+  "description": "Maximum join number.",
   "repository": {
     "type": "git",
     "url": "git@github.com:sugarshin/maximum-join.git"
@@ -14,25 +14,6 @@
     "package.json",
     "README.md"
   ],
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "rules": {
-      "strict": 0,
-      "quotes": [
-        1,
-        "single",
-        "avoid-escape"
-      ],
-      "no-underscore-dangle": 0,
-      "no-unused-vars": [
-        1
-      ]
-    },
-    "env": {
-      "browser": true,
-      "node": true
-    }
-  },
   "scripts": {
     "lint": "eslint src/maximum-join.js",
     "test": "mocha --compilers js:espower-babel/guess test/**/*.js",
