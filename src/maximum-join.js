@@ -4,7 +4,7 @@
  * License: MIT
  */
 
-const toS = 'toString';
+const toStr = 'toString';
 
 export default function maximumJoin(array) {
   if (!Array.isArray(array)) {
@@ -12,7 +12,10 @@ export default function maximumJoin(array) {
   }
 
   let result = array.map(el => {
-                      if (typeof el !== 'number') {
+                      if (typeof el !== 'number' ||
+                          isNaN(el) ||
+                          el === Infinity ||
+                          el === -Infinity) {
                         return false;
                       }
                       return Math.abs(Math.floor(el));
@@ -25,8 +28,8 @@ export default function maximumJoin(array) {
                         return 0;
                       }
 
-                      let strA = a[toS]();
-                      let strB = b[toS]();
+                      let strA = a[toStr]();
+                      let strB = b[toStr]();
 
                       let a1stDegit = +strA.slice(0, 1);
                       let b1stDegit = +strB.slice(0, 1);
@@ -44,11 +47,28 @@ export default function maximumJoin(array) {
                         return 1;
                       }
 
-                      for (let i = 2; i < Infinity; i++) {
-                        if ( +strB.slice(0, i) !== +strA.slice(0, i) ) {
-                          return +strB.slice(0, i) - +strA.slice(0, i);
+                      let biggerLenNum, smallerLenNum, smallerLen;
+                      if (aLen > bLen) {
+                        biggerLenNum = strA;
+                        smallerLenNum = strB;
+                        smallerLen = bLen;
+                      } else if (aLen < bLen) {
+                        biggerLenNum = strB;
+                        smallerLenNum = strA;
+                        smallerLen = aLen;
+                      } else if (aLen === bLen) {
+                        smallerLen = aLen;
+                      }
+
+                      for (let i = 1; i < smallerLen; i++) {
+                        let _b = +strB.slice(i, i + 1);
+                        let _a = +strA.slice(i, i + 1);
+                        if (_b !== _a) {
+                          return _b - _a;
                         }
                       }
+
+                      return +biggerLenNum.slice(smallerLen, smallerLen + 1) - +smallerLenNum.slice(0, 1);
 
                     })
                     .join('');
