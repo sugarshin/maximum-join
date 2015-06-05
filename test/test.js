@@ -25,8 +25,8 @@ describe('maximumJoin()', () => {
   });
 
   it('case 5', () => {
-    let arr = [4, 62, {}, 542, 66, '2', 8, 9, true, 0, [], 246, false, 9, 7];
-    assert(maximumJoin(arr) === 9987666254242460);
+    let arr = [4, 62, {}, NaN, -10, 66, '2', -Infinity, 8, 9, true, 0, [], Infinity, false, 9, 7];
+    assert(maximumJoin(arr) === 998766624100);
   });
 
   it('case 6', () => {
