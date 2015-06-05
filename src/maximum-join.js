@@ -15,7 +15,7 @@ export default function maximumJoin(array) {
                       if (typeof el !== 'number') {
                         return false;
                       }
-                      return Math.abs(parseInt(el));
+                      return Math.abs(Math.floor(el));
                     })
                     .filter(el => {
                       return el !== false;
