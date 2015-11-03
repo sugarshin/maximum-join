@@ -20,9 +20,6 @@
     "compile": "babel src/maximum-join.js -o lib/maximum-join.js",
     "build": "npm run lint && npm run compile"
   },
-  "engines": {
-    "node": "0.12.x"
-  },
   "author": "sugarshin",
   "license": "MIT",
   "devDependencies": {
