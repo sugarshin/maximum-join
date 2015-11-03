@@ -69,4 +69,9 @@ describe('maximumJoin()', () => {
     assert(maximumJoin(arr) === 8676436436672643643666436436642);
   });
 
+  it('case 14', () => {
+    let arr = [2, 35, 23, 8, 8, 52, 4, 14];
+    assert(maximumJoin(arr) === 885243523214);
+  });
+
 });
