@@ -31,7 +31,7 @@
     "babel": "^5.8.29",
     "babel-eslint": "^4.1.3",
     "eslint": "^1.8.0",
-    "eslint-config-sugarshin": "github:sugarshin/eslint-config-sugarshin",
+    "eslint-config-sugarshin": "0.0.7",
     "eslint-plugin-babel": "^2.1.1",
     "espower-babel": "^3.3.0",
     "mocha": "^2.3.3",
