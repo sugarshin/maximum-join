@@ -3,9 +3,6 @@
  * (c) sugarshin
  * License: MIT
  */
-
-const toString = 'toString';
-
 export default function maximumJoin(array) {
   if (!Array.isArray(array)) {
     throw new TypeError('should be an Array.');
@@ -23,8 +20,8 @@ export default function maximumJoin(array) {
       return 0;
     }
 
-    const strA = a[toString]();
-    const strB = b[toString]();
+    const strA = a.toString();
+    const strB = b.toString();
 
     const aLen = strA.length;
     const bLen = strB.length;
