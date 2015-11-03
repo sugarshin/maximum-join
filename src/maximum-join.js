@@ -11,7 +11,7 @@ export default function maximumJoin(array) {
     throw new TypeError('should be an Array.');
   }
 
-  let result = array.filter(el => (
+  const result = array.filter(el => (
     typeof el === 'number' &&
     !isNaN(el) &&
     el !== Infinity &&
@@ -23,13 +23,15 @@ export default function maximumJoin(array) {
       return 0;
     }
 
-    let strA = a[toString]();
-    let strB = b[toString]();
+    const strA = a[toString]();
+    const strB = b[toString]();
 
-    let aLen = strA.length;
-    let bLen = strB.length;
+    const aLen = strA.length;
+    const bLen = strB.length;
 
-    let biggerLenNum, smallerLenNum, smallerLen;
+    let biggerLenNum;
+    let smallerLenNum;
+    let smallerLen;
 
     if (aLen > bLen) {
       biggerLenNum = strA;
@@ -44,8 +46,8 @@ export default function maximumJoin(array) {
     }
 
     for (let i = 0; i < smallerLen; i++) {
-      let _b = +strB.slice(i, i + 1);
-      let _a = +strA.slice(i, i + 1);
+      const _b = +strB.slice(i, i + 1);
+      const _a = +strA.slice(i, i + 1);
       if (_b !== _a) {
         return _b - _a;
       }
@@ -59,7 +61,6 @@ export default function maximumJoin(array) {
     }
 
     return +biggerLenNum.slice(smallerLen, smallerLen + 1) - +smallerLenNum.slice(0, 1);
-
   })
   .join('');
 

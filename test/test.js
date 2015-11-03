@@ -1,6 +1,6 @@
 import assert from 'power-assert';
 
-import maximumJoin from '../src/maximum-join';
+import maximumJoin from '..';
 
 describe('maximumJoin()', () => {
 
